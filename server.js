@@ -17,18 +17,6 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-function hash (input, salt,) {
-    //How do we create a hash?
-    var hashed = crypto.pbkdf2Sync(input, salt, 10000, 512, 'sha512');
-    return hashed.toString("hex")
-}    
-
-app.get('/hash/', function (req,res) {
-    var hashedString = hash(req,params, input, 'this-is-some-random-string');
-    res.send(hashedString);
-});
-
-
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
